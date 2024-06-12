@@ -1,0 +1,60 @@
+Part 3: Functional Dependency Theory:
+
+Subpart a:
+
+Given the relational schema R(A,B,C,D,E) with functional dependencies D->B and
+CE->A, our goal is to decompose this schema into BCNF. If we start with the FD
+D->B, then we see that the closure of D is {D,B}, hence R is not in BCNF. Thus
+we decompose R into R1(B,D) and R2(A,C,D,E). R1 is in BCNF, so we will move
+onto R2. We can now use the FD CE->A, the closure of CE is {A,C,E}, hence R2
+is not in BCNF. Thus we decompose R2 into R3(A,C,E) and R4(C,D,E). Both of
+these relations are in BCNF, hence decomposing R leaves us with the following
+set of relations: R1(B,D), R3(A,C,E), and R4(C,D,E).
+
+Subpart b:
+
+Given the relational schema S(A,B,C,D,E) with functional dependencies A->E,
+BC->A, and DE->B, our goal is to decompose this schema into BCNF. If we start
+with the FD A->E, then we see that the closure of A is {A,E}, hence S is not
+in BCNF. Thus we decompose S into S1(A,E) and S2(A,B,C,D). S1 is in BCNF, so
+we will move onto S2. We can now use the FD BC->A, the closure of BC is
+{A,B,C}, hence S2 is not in BCNF. Thus we decompose S2 into S3(A,B,C) and
+S4(B,C,D). Both of these relations are in BCNF, hence decomposing S leaves us
+with the following set of relations: S1(A,E), S3(A,B,C), and S4(B,C,D).
+
+Subpart c:
+
+Given that a set of attributes X is called "closed" (with respect to a given
+set of functional dependencies) if the closure of X is itself, our goal is to
+come up with a set of FDs such that, all subsets of {A,B,C,D} are closed. It
+turns out that, in order for all subsets of {A,B,C,D} to be closed, there can
+be no non-trivial functional dependencies. If there were, then the closure of
+at least one subset of {A,B,C,D} would not be closed. Hence this set is empty,
+or you could say it's the set of all trivial FDs.
+
+Subpart d:
+
+Given that a set of attributes X is called "closed" (with respect to a given
+set of functional dependencies) if the closure of X is itself, our goal is to
+come up with a set of FDs such that, the only closed subsets of {A,B,C,D} are
+{} and {A,B,C,D}. Since the only subset non-empty subset of {A,B,C,D} that can
+be closed is itself, it follows that, in order to solve this problem, all we
+need to do is ensure that every singular attribute points to a different and
+unique attribute, if we do that, then the only closed subset will be {A,B,C,D}
+itself. The aforementioned reasoning would work, because the closure of every
+subset of {A,B,C,D} would be {A,B,C,D}, meaning the only closed subset would be
+{A,B,C,D} itself. Hence, a set of functional dependencies that do the trick is:
+A->B, B->C, C->D, and D->A.
+
+Subpart e:
+
+Given that a set of attributes X is called "closed" (with respect to a given
+set of functional dependencies) if the closure of X is itself, our goal is to
+come up with a set of FDs such that, the only closed subsets of {A,B,C,D} are
+{}, {B,C}, and {A,B,C,D}. Since the only subset non-empty subset of {A,B,C,D}
+that can be closed is itself and {B,C}, it turns out that we need to split
+BC->BC into two seperate FDs; B->C and C->B. By doing this we ensure the the B
+and C aren't closed, but BC is. Furthermore, if we ensure that combining any
+attribute with A or D leads to a closure of {A,B,C,D}, then we can ensure that
+the only other closed subset is {A,B,C,D} itself. Hence, the set of FDs that
+satisfy these conditions are: A->D, B->C, C->B, and D->ABC.

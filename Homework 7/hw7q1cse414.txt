@@ -1,0 +1,30 @@
+{ "city": "Chachapoyas" }
+{ "city": "Chimbote" }
+{ "city": "Huaraz" }
+{ "city": "Abancay" }
+{ "city": "Arequipa" }
+{ "city": "Ayacucho" }
+{ "city": "Cajamarca" }
+{ "city": "Callao" }
+{ "city": "Cuzco" }
+{ "city": "Huancavelica" }
+{ "city": "Huanuco" }
+{ "city": "Ica" }
+{ "city": "Chincha Alta" }
+{ "city": "Huancayo" }
+{ "city": "Trujillo" }
+{ "city": "Chiclayo" }
+{ "city": "Lima" }
+{ "city": "Iquitos" }
+{ "city": "Puerto Maldonado" }
+{ "city": "Moquegua" }
+{ "city": "Cerro de Pasco" }
+{ "city": "Piura" }
+{ "city": "Sullana" }
+{ "city": "Talara" }
+{ "city": "Puno" }
+{ "city": "Juliaca" }
+{ "city": "Moyobamba" }
+{ "city": "Tacna" }
+{ "city": "Tumbes" }
+{ "city": "Pucallpa" }

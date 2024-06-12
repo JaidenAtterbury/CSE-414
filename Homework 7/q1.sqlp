@@ -1,0 +1,9 @@
+SELECT u.name AS city
+FROM geo.world AS x, x.mondial.country AS y, y.province AS z, 
+            CASE WHEN z.city IS MISSING THEN []
+                 WHEN IS_ARRAY(z.city) THEN z.city
+                 ELSE [z.city] END AS u
+WHERE y.name='Peru'
+ORDER BY u.name;
+
+-- Duration of all jobs: 0.47 sec

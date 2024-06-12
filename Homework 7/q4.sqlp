@@ -1,0 +1,8 @@
+SELECT z.`#text` AS ethnic_group, COUNT(y.name) AS num_countries, SUM((float(z.`-percentage`)/100)*float(y.population)) AS total_population
+FROM geo.world AS x, x.mondial.country AS y,
+            CASE WHEN y.ethnicgroups IS MISSING THEN []
+                 WHEN IS_ARRAY(y.ethnicgroups) THEN y.ethnicgroups
+                 ELSE [y.ethnicgroups] END AS z
+GROUP BY z.`#text`;
+
+-- Duration of all jobs: 0.475 sec

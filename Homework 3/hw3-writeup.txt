@@ -1,0 +1,22 @@
+Overall, my experience using a cloud-hosted DBMS was alright. Although it may
+be in the nature of the queries we were running today, I found that sqlite3
+gave me less problems when it came to query running time. There were many
+times when using SQLServer on Azure where simple queries took a surprisingly long
+amount of time to run. This may be due to some connection problem I was having,
+but I never experienced this when working with sqlite3. One positive of using
+SQLServer on Azure, is that the query writing interface is much better to work
+with than that of sqlite3. Furthermore, in comparison to sqlite3, the output
+is much easier to read and digest in SQLServer on Azure.
+
+If I were to recommend a DBMS for students to tinker/experiment in, I would
+probably recommend sqlite3 over SQLServer on Azure.
+
+If I were to recommend a DBMS for a future co-worker to use on their project,
+I would probably recommend SQLServer on Azure over anything else I have used.
+
+The reason why my answers differed is because for a student who is only
+experimenting with SQL, I feel like sqlite3 has a much simpler installation
+and setup process then SQLServer on Azure does. Thus, it would be easier for
+students to get started with SQL on sqlite3, which is what we did in this class.
+However, in a more professional envrionment, the capabilities in terms of storage
+and UI that Azure provides would be much better for a co-worker doing a company project.

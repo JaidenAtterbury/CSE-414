@@ -1,0 +1,9 @@
+SELECT y.`-car_code` AS country_code, y.name AS country_name, seas AS seas
+FROM geo.world AS x, x.mondial.country AS y
+LET seas = (SELECT z.name AS sea
+		    FROM x.mondial.sea AS z, split(z.`-country`, " ") AS cid
+		    WHERE y.`-car_code` = cid)
+WHERE STRICT_COUNT(seas) >= 2
+ORDER BY STRICT_COUNT(seas) DESC;
+
+-- Duration of all jobs: 0.788 sec
